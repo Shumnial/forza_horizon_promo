@@ -1,0 +1,60 @@
+.c-hero{
+  text-align: center;
+  position: relative;
+  padding-bottom: 8%;
+  border-bottom: 2px solid @orange;
+
+  &__bg {
+    pointer-events: none;
+  }
+
+  &__info {
+    position: absolute;
+    max-width: 990px;
+    left: 0;
+    right: 0;
+    bottom: 8%;
+    margin: auto;
+    padding: 0 15px;
+  }
+
+  &__arrows {
+    width: 76px;
+    height: 76px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -38px;
+    margin: auto;
+    background-color: #fff;
+
+    &::before, 
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 14px;
+      height: 14px;
+      border-right: 3px solid @orange;
+      border-bottom: 3px solid @orange;
+      transform: rotate(45deg);
+      border-radius: 1px;
+    }
+
+    &::before {
+      top: -22%;
+    }
+  }
+
+  @media (max-width: @screen-md) {
+    padding-bottom: 40px;
+
+    &__info {
+      position: static;
+    }
+  }
+}

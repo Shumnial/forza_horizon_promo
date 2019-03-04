@@ -1,0 +1,64 @@
+.c-final{
+  position: relative;
+  text-align: center;
+  border-top: 2px solid @orange;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 176px;
+    height: 112px;
+    background-color: #fff;
+    background-image: url('../images/thumbs-up.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  &__info {
+    position: absolute;
+    top: 14%;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &__bg {
+    pointer-events: none;
+    padding-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__note {
+    font-size: 14px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: @screen-md) {
+    padding-top: 70px;
+
+    &__info {
+      position: static;
+    }
+  }
+
+  @media (max-width: @screen-xs) {
+    padding-top: 40px;
+
+    &::before {
+      width: 88px;
+      height: 88px;
+      background-size: 70%;
+      background-position: center;
+    }
+
+    &__note {
+      font-size: 12px;
+    }
+  }
+}

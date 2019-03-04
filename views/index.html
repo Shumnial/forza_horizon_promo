@@ -1,0 +1,55 @@
+{% extends layout %}
+{% block head_section %}
+{#-
+	Include something in <head />	
+-#}
+{% endblock head_section %}
+
+{% block content %}
+<div class="container">
+	<div class="c-instruction">
+		<div class="c-head">
+			<div></div>
+		</div>
+		<div class="c-hero">
+			<div class="c-hero__bg">
+				<img src="{{ 'bg-hero.jpg'|img_asset }}" alt="">
+			</div>
+			<div class="c-hero__info">
+				<h2 class="title">Уважаемый пользователь!</h2>
+				<p class="subtitle">Поздравляем Вас с&nbsp;покупкой ноутбука ZET, который включает полную версию популярной игры Forza Horizon&nbsp;4: стандартное издание. Пожалуйста, следуйте инструкции ниже, чтобы получить вашу бесплатную копию Forza Horizon&nbsp;4: стандартное издание.</p>
+			</div>
+			<div class="c-hero__arrows"></div>
+		</div>
+
+		<div class="c-steps">
+			{% for item in index.steps %}
+			<div class="c-steps__item">
+				<span class="c-steps__count">{{ loop.index }}</span>
+				{{ item.text }}
+				{% if item.img %}
+					<img src="{{ item.img|img_asset }}" alt="" class="c-steps__img">
+				{% endif %}
+			</div>
+			{% endfor %}
+		</div>
+
+		<div class="c-final">
+			<div class="c-final__info">
+				<h2 class="title">Все готово!</h2>
+				<p class="subtitle">Добро пожаловать в&nbsp;увлекательный мир Forza Horizon&nbsp;4: стандартное издание.<br>Живи в&nbsp;движении. Живи Horizon!</p>
+			</div>
+			<div class="c-final__bg">
+				<img src="{{ 'bg-final.jpg'|img_asset }}" alt="">
+			</div>
+			<p class="c-final__note">ПРОДАВЕЦ - ООО "ДНС РИТЕЙЛ". ЮР. АДРЕС: 690068, РОССИЙСКАЯ ФЕДЕРАЦИЯ, ПРИМОРСКИЙ КРАЙ, ГОРОД ВЛАДИВОСТОК, ПРОСПЕКТ 100-ЛЕТИЯ ВЛАДИВОСТОКА, ДОМ 155, КОРПУС 3, ОФИС 5. ИНН 2540167061. ОГРН 1102540008230.</p>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer_section %}
+	{#-
+		Include something before /body	
+	-#}
+{% endblock footer_section %}
